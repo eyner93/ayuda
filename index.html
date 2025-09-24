@@ -225,10 +225,13 @@ form.addEventListener('submit', async (e) => {
   };
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbz1ONqUho2SO9heeE-BN3s31ntIGiclVoolQqbj5ZN6KFdrVmyfsEnN1EIIVKXG96LE/exec", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+    const response = await fetch("https://script.google.com/macros/s/AKfycbwf54RgA7c8VpCFcEBk3H_qai_0k63uGqIPZ2u9NQTf5oZUAW5GpbY_CCJikDTOX5m0/exec", {
+  method: "POST",
+  mode: "cors",   // 👈 habilitar CORS
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(payload)
+});
+
     });
 
     const result = await response.json();
